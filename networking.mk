@@ -26,9 +26,9 @@ NSS_MACSEC:= \
 
 QCA_ECM_STANDARD:= kmod-qca-nss-ecm-standard
 
-QCA_ECM_ENTERPRISE:= kmod-qca-nss-ecm-noload kmod-qca-nss-ecm-wifi-plugin
+QCA_ECM_ENTERPRISE:= kmod-qca-nss-ecm-noload
 
-QCA_ECM_PREMIUM:= kmod-qca-nss-ecm-premium kmod-qca-nss-ecm-wifi-plugin
+QCA_ECM_PREMIUM:= kmod-qca-nss-ecm-premium
 
 NSS_PPE_256:= kmod-qca-nss-ppe \
 	kmod-qca-nss-ppe-vp \
@@ -177,7 +177,7 @@ NSS_256:=$(NSS_COMMON) \
 	$(SWITCH_SSDK_NOHNAT_PKGS) $(QCA_PHY_PKGS) \
 	$(NSS_USERSPACE_OSS) $(CD_ROUTER_256MB) $(NSS_PPE_256) \
 	$(NETWORKING_256MB) -lacpd \
-	$(IGMPSNOOPING_RSTP) $(SAL_QOS) $(UDP_CLF) kmod-qca-nss-fls-lite kmod-qca-nss-ecm-wifi-plugin \
+	$(IGMPSNOOPING_RSTP) $(SAL_QOS) $(UDP_CLF) kmod-qca-nss-fls-lite \
 	kmod-qca-ovsmgr -qca-mcs-apps kmod-macvlan \
 	kmod-vxlan
 
