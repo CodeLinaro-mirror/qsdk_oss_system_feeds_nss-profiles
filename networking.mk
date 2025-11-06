@@ -84,7 +84,7 @@ SAL_QOS:= qca-sal-qos-test qca-sal-rule-test
 SWITCH_SSDK_NOHNAT_PKGS:= kmod-qca-ssdk-nohnat qca-ssdk-shell swconfig kmod-qca8k
 
 QCA_PHY_PKGS:= kmod-qca-nss-phy kmod-qcom-lnx-phy kmod-qca8084 kmod-aqr-phy \
-	       kmod-qca8xxx-phc kmod-qca-mdio
+	       kmod-qca8xxx-phc kmod-qca-mdio kmod-qcom-lnx-phy-macsec
 
 MACSEC_OPEN_PKGS:= kmod-qca-nss-macsec wpa-supplicant-macsec hostapd-macsec
 
