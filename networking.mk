@@ -150,7 +150,7 @@ IGMPSNOOPING_RSTP:=rstp qca-mcs-apps
 
 IPSEC:=kmod-ipsec kmod-ipsec4 kmod-ipsec6
 
-NSS_USERSPACE_OSS:=ppecfg
+NSS_USERSPACE_OSS:=ppecfg ppe_mcast_mgr
 
 EMESH_SP:=kmod-emesh-sp
 
