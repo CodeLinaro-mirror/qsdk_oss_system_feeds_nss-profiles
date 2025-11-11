@@ -99,15 +99,16 @@ NETWORKING:=mcproxy -dnsmasq dnsmasq-dhcpv6 bridge ip-bridge ip-full mwan3 \
 	luci-app-upnp luci-app-ddns luci-proto-ipv6 \
 	kmod-nf-nathelper-extra kmod-nf-nathelper \
 	kmod-ipt-nathelper-rtsp nftables kmod-nft-netdev \
-	kmod-nft-offload kmod-bonding vxlan kmod-gre6 conntrack
+	kmod-nft-offload kmod-bonding vxlan kmod-gre6 conntrack linuxptp
 
 NETWORKING_256MB:=-dnsmasq dnsmasq-dhcpv6 bridge ip-full \
-	rp-pppoe-relay iputils-tracepath iputils-tracepath6
+	rp-pppoe-relay iputils-tracepath iputils-tracepath6 linuxptp
 
-NETWORKING_8MB:=dnsmasq -dnsmasq-dhcpv6 kmod-nf-nathelper-extra kmod-ipt-nathelper-rtsp
+NETWORKING_8MB:=dnsmasq -dnsmasq-dhcpv6 kmod-nf-nathelper-extra \
+		kmod-ipt-nathelper-rtsp linuxptp
 
 NETWORKING_16MB:=-dnsmasq dnsmasq-dhcpv6 kmod-nf-nathelper-extra kmod-ipt-nathelper-rtsp ip \
-	rp-pppoe-relay
+		 rp-pppoe-relay linuxptp
 
 NPT66:= kmod-ipt-nat6 iptables-mod-nat-extra
 
