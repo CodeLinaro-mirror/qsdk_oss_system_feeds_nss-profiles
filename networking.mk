@@ -177,7 +177,7 @@ NSS_SFU:=$(NSS_COMMON) $(NSS_USERSPACE_OSS)\
 NSS_256:=$(NSS_COMMON) \
 	$(SWITCH_SSDK_NOHNAT_PKGS) $(QCA_PHY_PKGS) \
 	$(NSS_USERSPACE_OSS) $(CD_ROUTER_256MB) $(NSS_PPE_256) \
-	$(NETWORKING_256MB) -lacpd \
+	$(NETWORKING_256MB) $(QCA_ECM_STANDARD) -lacpd \
 	$(IGMPSNOOPING_RSTP) $(SAL_QOS) $(UDP_CLF) kmod-qca-nss-fls-lite \
 	kmod-qca-ovsmgr -qca-mcs-apps kmod-macvlan \
 	kmod-vxlan
