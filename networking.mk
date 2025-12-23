@@ -11,6 +11,7 @@
 # | QBuilder    | N   | N   |
 # | Enterprise  | N   | N   |
 # | Minent      | N   | Y   |
+# | MinentOpen  | Y   | N   |
 # | 256         | Y   | Y   |
 # | 512         | Y   | Y   |
 # | Default     | Y   | Y   |
@@ -18,11 +19,29 @@
 
 NSS_COMMON:= kmod-qca-nss-dp
 
+NSS_CRYPTO_MINENT:= kmod-qca-nss-crypto \
+	kmod-qca-nss-cfi-cryptoapi \
+	-kmod-qca-nss-cfi-ocf \
+	kmod-qca-nss-drv-ipsecmgr \
+	kmod-qca-nss-drv-ipsecmgr-xfrm \
+	-kmod-crypto-ocf \
+	-kmod-qca-nss-drv-ipsecmgr-klips
+
+NSS_FW_MINENT:= qca-nss-fw-al-enterprise \
+		qca-nss-fw-al-enterprise_custC \
+		qca-nss-fw-eip-al
+
 NSS_MACSEC:= \
 	kmod-qca-nss-macsec \
 	qca-wpa-supplicant-macsec \
 	qca-hostap-macsec \
 	qca-hapd-supp-macsec
+
+NSS_NETFN_MINENT:= kmod-qca-nss-netfn-pkt-steer \
+	kmod-qca-nss-netfn-capwap \
+	kmod-qca-nss-netfn-dtls \
+	kmod-qca-nss-netfn-capwapmgr \
+	kmod-qca-nss-flowmgr
 
 QCA_ECM_STANDARD:= kmod-qca-nss-ecm-standard
 
@@ -173,7 +192,6 @@ NSS_SFU:=$(NSS_COMMON) $(NSS_USERSPACE_OSS)\
 	kmod-qca-nss-macsec kmod-macvlan $(NSS_UDP_ST) $(NSS_NETFN_TCPST) $(NETWORKING_256MB) \
 	$(NSS_SOCK_OFFLOAD) kmod-vxlan
 
-
 NSS_256:=$(NSS_COMMON) \
 	$(SWITCH_SSDK_NOHNAT_PKGS) $(QCA_PHY_PKGS) \
 	$(NSS_USERSPACE_OSS) $(CD_ROUTER_256MB) $(NSS_PPE_256) \
@@ -181,6 +199,15 @@ NSS_256:=$(NSS_COMMON) \
 	$(IGMPSNOOPING_RSTP) $(SAL_QOS) $(UDP_CLF) kmod-qca-nss-fls-lite \
 	kmod-qca-ovsmgr -qca-mcs-apps kmod-macvlan \
 	kmod-vxlan
+
+NSS_MINENT_OPEN:=$(NSS_COMMON) \
+	$(SWITCH_SSDK_NOHNAT_PKGS) $(QCA_PHY_PKGS) \
+	$(NETWORKING) $(QOS) \
+	$(QCA_ECM_ENTERPRISE) $(MACSEC_OPEN_PKGS) $(NSS_CRYPTO_MINENT) \
+	$(IPSEC) $(STRONGSWAN) $(CD_ROUTER) \
+	-lacpd -kmod-qca-nss-ecm-wifi-plugin \
+	$(NSS_PPE) $(NSS_USERSPACE_OSS) \
+	$(NSS_NETFN_MINENT) $(NSS_FW_MINENT)
 
 #Below are the deprecated profiles.
 NSS_DPDK:=$(NSS_PPE) $(NSS_COMMON) \
