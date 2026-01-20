@@ -17,7 +17,8 @@
 # | Default     | Y   | Y   |
 # | 16M         | N   | N   |
 
-NSS_COMMON:= kmod-qca-nss-dp
+NSS_COMMON:= kmod-qca-nss-dp \
+	kmod-qca-nss-debug
 
 NSS_CRYPTO_MINENT:= kmod-qca-nss-crypto \
 	kmod-qca-nss-cfi-cryptoapi \
