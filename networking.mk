@@ -17,7 +17,8 @@
 # | Default     | Y   | Y   |
 # | 16M         | N   | N   |
 
-NSS_COMMON:= kmod-qca-nss-dp
+NSS_COMMON:= kmod-qca-nss-dp \
+	kmod-qca-nss-debug
 
 NSS_CRYPTO_MINENT:= kmod-qca-nss-crypto \
 	kmod-qca-nss-cfi-cryptoapi \
@@ -173,7 +174,7 @@ NSS_512:= $(NSS_COMMON) \
 	$(IGMPSNOOPING_RSTP) $(IPSEC) $(QOS) $(QCA_ECM_PREMIUM) $(NSS_PPE) $(NSS_USERSPACE_OSS) \
 	$(NSS_MACSEC) $(NSS_CRYPTO) $(NSS_CLIENTS_STANDARD) \
 	$(MAP_PKGS) -lacpd $(EMESH_SP) $(WIFI_PLUGINS) \
-	kmod-macvlan $(NSS_L2TP)
+	kmod-macvlan $(NSS_L2TP) $(MMAP_TELEMETRY) $(SXC_DRVS)
 
 NSS_OPEN:=$(NSS_PPE) $(NSS_COMMON) $(NSS_USERSPACE_OSS)\
 	$(QCA_ECM_PREMIUM) $(STRONGSWAN) $(NETWORKING) $(CD_ROUTER) \
