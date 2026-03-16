@@ -110,7 +110,6 @@ MACSEC_OPEN_PKGS:= kmod-qca-nss-macsec wpad-macsec
 
 NSS_L2TP:= kmod-l2tp kmod-l2tp-ip kmod-l2tp-eth
 
-WIFI_PLUGINS:=kmod-qca-wifi-nss-plugins
 NSS_PLUGINS:=kmod-qca-nss-wifi-plugins
 ATH_CLIENT:=kmod-qca-nss-ppe-ath-clients
 
@@ -157,7 +156,7 @@ EMESH_SP:=kmod-emesh-sp
 DPDK:=dpdk-tools kmod-qca-nss-dpdk-cfgmgr kmod-nss-ppe-uio
 
 EXTRA_NETWORKING:= $(CD_ROUTER) kmod-qca-nss-macsec \
-	$(MACSEC_OPEN_PKGS) $(NSS_CRYPTO) $(NSS_CLIENTS_STANDARD) $(WIFI_PLUGINS) $(NSS_PLUGINS) $(ATH_CLIENT)
+	$(MACSEC_OPEN_PKGS) $(NSS_CRYPTO) $(NSS_CLIENTS_STANDARD) $(NSS_PLUGINS) $(ATH_CLIENT)
 
 STRONGSWAN:=strongswan strongswan-default strongswan-mod-ctr strongswan-mod-gcm strongswan-mod-kdf strongswan-mod-openssl strongswan-mod-uci
 
@@ -173,7 +172,7 @@ NSS_512:= $(NSS_COMMON) \
 	$(NETWORKING) $(OPENVPN) \
 	$(IGMPSNOOPING_RSTP) $(IPSEC) $(QOS) $(QCA_ECM_PREMIUM) $(NSS_PPE) $(NSS_USERSPACE_OSS) \
 	$(NSS_MACSEC) $(NSS_CRYPTO) $(NSS_CLIENTS_STANDARD) \
-	$(MAP_PKGS) -lacpd $(EMESH_SP) $(WIFI_PLUGINS) \
+	$(MAP_PKGS) -lacpd $(EMESH_SP) \
 	kmod-macvlan $(NSS_L2TP) $(MMAP_TELEMETRY) $(SXC_DRVS)
 
 NSS_OPEN:=$(NSS_PPE) $(NSS_COMMON) $(NSS_USERSPACE_OSS)\
