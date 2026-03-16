@@ -110,7 +110,6 @@ MACSEC_OPEN_PKGS:= kmod-qca-nss-macsec wpad-macsec
 
 NSS_L2TP:= kmod-l2tp kmod-l2tp-ip kmod-l2tp-eth
 
-WIFI_PLUGINS:=kmod-qca-wifi-nss-plugins
 NSS_PLUGINS:=kmod-qca-nss-wifi-plugins
 ATH_CLIENT:=kmod-qca-nss-ppe-ath-clients
 
