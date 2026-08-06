@@ -188,7 +188,7 @@ NSS_OPEN:=$(NSS_PPE) $(NSS_COMMON) $(NSS_USERSPACE_OSS)\
 NSS_SFU:=$(NSS_COMMON) $(NSS_USERSPACE_OSS)\
 	$(SWITCH_SSDK_NOHNAT_PKGS) $(QCA_PHY_PKGS) $(IGMPSNOOPING_RSTP) -qca-mcs-apps \
 	$(NSS_PPE_256) $(CD_ROUTER_256MB) \
-	$(QOS) $(SAL_QOS) $(UDP_CLF) kmod-qca-nss-fls-lite \
+	$(QOS) $(SAL_QOS) \
 	kmod-qca-nss-macsec kmod-macvlan $(NSS_UDP_ST) $(NSS_NETFN_TCPST) $(NETWORKING_256MB) \
 	$(NSS_SOCK_OFFLOAD) kmod-vxlan
 
